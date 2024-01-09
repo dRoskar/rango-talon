@@ -134,7 +134,7 @@ copy text <user.rango_target>:
   user.rango_command_with_target("copyElementTextContent", rango_target)
 
 # Paste
-snap to <user.rango_target>:
+snoop to <user.rango_target>:
   user.rango_command_with_target("insertToField", rango_target, clip.text())
 
 # Insert text to field
