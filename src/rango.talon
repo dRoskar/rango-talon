@@ -79,9 +79,9 @@ upper <number>: user.rango_command_without_target("scrollUpPage", number)
 upper all: user.rango_command_without_target("scrollUpPage", 9999)
 tiny up: user.rango_command_without_target("scrollUpPage", 0.2)
 
-downer: user.rango_command_without_target("scrollDownPage")
-downer <number>: user.rango_command_without_target("scrollDownPage", number)
-downer all: user.rango_command_without_target("scrollDownPage", 9999)
+dolly: user.rango_command_without_target("scrollDownPage")
+dolly <number>: user.rango_command_without_target("scrollDownPage", number)
+dolly all: user.rango_command_without_target("scrollDownPage", 9999)
 tiny down: user.rango_command_without_target("scrollDownPage", 0.2)
 
 scroll left: user.rango_command_without_target("scrollLeftPage")
@@ -96,14 +96,14 @@ tiny right: user.rango_command_without_target("scrollRightPage", 0.2)
 upper left: user.rango_command_without_target("scrollUpLeftAside")
 upper left all: user.rango_command_without_target("scrollUpLeftAside", 9999)
 
-downer left: user.rango_command_without_target("scrollDownLeftAside")
-downer left all: user.rango_command_without_target("scrollDownLeftAside", 9999)
+dolly left: user.rango_command_without_target("scrollDownLeftAside")
+dolly left all: user.rango_command_without_target("scrollDownLeftAside", 9999)
 
 upper right: user.rango_command_without_target("scrollUpRightAside")
 upper right all: user.rango_command_without_target("scrollUpRightAside", 9999)
 
-downer right: user.rango_command_without_target("scrollDownRightAside")
-downer right all: user.rango_command_without_target("scrollDownRightAside", 9999)
+dolly right: user.rango_command_without_target("scrollDownRightAside")
+dolly right all: user.rango_command_without_target("scrollDownRightAside", 9999)
 
 # Scroll the scrolling container that contains the target
 upper <user.rango_target>:
@@ -111,7 +111,7 @@ upper <user.rango_target>:
 tiny up <user.rango_target>:
   user.rango_command_with_target("scrollUpAtElement", rango_target, 0.2)
 
-downer <user.rango_target>:
+dolly <user.rango_target>:
   user.rango_command_with_target("scrollDownAtElement", rango_target)
 tiny down <user.rango_target>:
   user.rango_command_with_target("scrollDownAtElement", rango_target, 0.2)
@@ -147,15 +147,15 @@ scroll to <user.word>:
   user.rango_command_without_target("scrollToPosition", word)
 
 # Copy target information
-copy [link] <user.rango_target>:
+snip [link] <user.rango_target>:
   user.rango_command_with_target("copyLink", rango_target)
-copy mark <user.rango_target>:
+snip mark <user.rango_target>:
   user.rango_command_with_target("copyMarkdownLink", rango_target)
-copy text <user.rango_target>:
+snip text <user.rango_target>:
   user.rango_command_with_target("copyElementTextContent", rango_target)
 
 # Paste
-paste to <user.rango_target>:
+poop to <user.rango_target>:
   user.rango_insert_text_to_input(clip.text(), rango_target, 0)
 
 # Insert text to field
@@ -175,9 +175,9 @@ change <user.rango_target>:
   user.rango_clear_input(rango_target)
 
 # Copy current url information
-copy page {user.rango_page_location_property}:
+snip page {user.rango_page_location_property}:
   user.rango_command_without_target("copyLocationProperty", rango_page_location_property)
-copy mark address:
+snip mark address:
   user.rango_command_without_target("copyCurrentTabMarkdownUrl")
 
 # Modify hints appearance
